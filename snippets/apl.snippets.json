@@ -1,0 +1,148 @@
+{
+	"Class": {
+		"prefix": "Class",
+		"body": [
+			"Class ${1:name}",
+			"\t$0",
+			":EndClass"
+		],
+		"description": "Class script"        
+	},
+	"Namespace": {
+		"prefix": "Namespace",
+		"body": [
+			"Namespace ${1:name}",
+			"\t$0",
+			":EndNamespace"
+		],
+		"description": "Namespace script"
+	},
+	"Interface": {
+		"prefix": "Interface",
+		"body": [
+			"Interface ${1:name}",
+			"\t$0",
+			":EndInterface"
+		],
+		"description": "Interface script"
+	},
+	"Property": {
+		"prefix": "Property",
+		"body": [
+			"Property ${1:name}",
+			"\t∇ r←get args",
+			"\t  r←$2",
+			"\t∇",
+			"\t∇ set args",
+			"\t∇",
+			":EndProperty"
+		],
+		"description": "Property declaration"
+	},
+	"Section": {
+		"prefix": "Section",
+		"body": [
+			"Section ${1:name}",
+			"\t$0",
+			":EndSection"
+		],
+		"description": "Section block"
+	},
+	"Disposable": {
+		"prefix": "Disposable",
+		"body": [
+			"Disposable ${1:objects}",
+			"\t$0",
+			":EndDisposable"
+		],
+		"description": "Disposable Statement"
+	},
+	"For": {
+		"prefix": "For",
+		"body": [
+			"For ${1:item} :In ${2:items}",
+			"\t$0",
+			":EndFor"
+		],
+		"description": "For loop"
+	},
+	"If": {
+		"prefix": "If",
+		"body": [
+			"If ${1:condition}",
+			"\t$2",
+			":EndIf"
+		],
+		"description": "If Statement"
+	},
+	"If Else": {
+		"prefix": "If Else",
+		"body": [
+			"If ${1:condition}",
+			"\t$2",
+			":Else",
+			"\t$0",
+			":EndIf"
+		],
+		"description": "If-Else Statement"
+	},
+	"Repeat": {
+		"prefix": "Repeat",
+		"body": [
+			"Repeat",
+			"\t$0",
+			":EndRepeat"
+		],
+		"description": "Repeat loop - endless"
+	},
+	"Repeat Until": {
+		"prefix": "Repeat Until",
+		"body": [
+			"Repeat",
+			"\t$0",
+			":Until ${1:condition}"
+		],
+		"description": "Repeat loop until"
+	},
+	"Select": {
+		"prefix": "Select",
+		"body": [
+			"Select ${1:object}",
+			":Case ${2:value}",
+			"\t$3",
+			":Else",
+			"\t$0",
+			":EndSelect"
+		],
+		"description": "Select Statement"
+	},
+	"Trap": {
+		"prefix": "Trap",
+		"body": [
+			"Trap ${1:error number}",
+			"\t$1",
+			":Else",
+			"\t$0",
+			":EndTrap"
+		],
+		"description": "Trap-Else Statement"
+	},
+	"While": {
+		"prefix": "While",
+		"body": [
+			"While ${1:condition}",
+			"\t$0",
+			":EndWhile"
+		],
+		"description": "While loop"
+	},
+	"With": {
+		"prefix": "With",
+		"body": [
+			"With ${1:condition}",
+			"\t$0",
+			":EndWith"
+		],
+		"description": "With Statement"
+	}
+}
