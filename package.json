@@ -2,7 +2,7 @@
     "name": "vscode-apl-language",
     "displayName": "APL Language",
     "description": "Basic APL language support (syntax, snippets)",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "OptimaSystems",
     "author": {
         "email": "gil@optima-systems.co.uk",
@@ -56,7 +56,8 @@
         "configurationDefaults": {
             "[apl]": {
                 "editor.wordBasedSuggestions": false,
-                "editor.foldingStrategy": "auto",
+                "editor.wordSeparators": "←+-×÷*⍟⌹○!?|⌈⌊⊥⊤⊣⊢=≠≤<>≥≡≢∧∨⍲⍱↑↓⊂⊃⌷⍋⍒⍳⍷∪∩∊~/\\⌿⍀,⍪⍴⌽⊖⍉¨⍨⍣.∘⍤⍞⎕⍠⌸⍎⍕⋄⍝→⍵⍺∇&¯⍬⌶¤∥∆⍙⍥⍫Á⍸⊆@⌺()[]{}%£#;:\"`$^'",
+				"editor.foldingStrategy": "auto",
 	            "editor.fontFamily": "APL385 Unicode, Consolas, 'Courier New', monospace"
             }
         },
