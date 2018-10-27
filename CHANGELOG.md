@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## 0.0.3
+- added .mipage extension
+
 ## 0.0.2
 - added word separators config
 
