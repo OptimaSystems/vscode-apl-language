@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## 0.0.4
+- fixed RegEx issue with firstLine match
+- fixed RegEx issue with local vars ending with semicolon in function header
+
 ## 0.0.3
 - added .mipage extension
 
