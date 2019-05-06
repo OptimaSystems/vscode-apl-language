@@ -2,7 +2,7 @@
     "name": "vscode-apl-language",
     "displayName": "APL Language",
     "description": "Basic APL language support (syntax, snippets)",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "OptimaSystems",
     "author": {
         "email": "gil@optima-systems.co.uk",
@@ -40,16 +40,16 @@
 					"dyalog"
 				],
 			"extensions": [
-				".dyalog",
-				".dyapp",
 				".apl",
+				".apla",
+                ".aplc",
 				".aplf",
-				".aplo",
-				".aplc",
 				".apli",
 				".apln",
-                ".apla",
-                ".mipage"
+                ".aplo",
+				".dyalog",
+				".dyapp",
+				".mipage"
 			],
             "firstLine": "[⌶-⍺]|^\\#!.*(?:\\s|\\/|(?<=!)\\b)(?:gnu[-._]?apl|aplx?|dyalog)(?:$|\\s)|-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)apl(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-|(?:(?:\\s|^)vi(?:m[<=>]?\\d+|m)?|\\sex)(?=:(?=\\s*set?\\s[^\\n:]+:)|:(?!\\s* set?\\s))(?:(?:\\s|\\s*:\\s*)\\w*(?:\\s*=(?:[^\\n\\\\\\s]|\\\\.)*)?)*[\\s:](?:filetype|ft|syntax)\\s*=apl(?=\\s|:|$)",
             "configuration": "./language-configuration.json"

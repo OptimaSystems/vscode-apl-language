@@ -14,6 +14,6 @@ This extension adds basic APL support by providing syntax highlighting and snipp
 
 ## Copyright
 
-The syntax grammar is converted from [language-apl](https://github.com/Alhadis/language-apl) Copyright © 2016-2018, John Gardner
+The syntax grammar is converted from [language-apl](https://github.com/Alhadis/language-apl) Copyright © 2016-2019, John Gardner
 
-The logo is Copyright © 2004 - 2018 Dyalog Ltd.
+The logo is Copyright © 2004 - 2019 Dyalog Ltd.
