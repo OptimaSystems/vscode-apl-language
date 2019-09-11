@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## 0.0.6
+- add schema validation for acre.config files
+
 ## 0.0.5
 - integrate latest chages from upstream (language-apl)
 

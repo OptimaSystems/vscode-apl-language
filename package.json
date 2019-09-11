@@ -2,7 +2,7 @@
     "name": "vscode-apl-language",
     "displayName": "APL Language",
     "description": "Basic APL language support (syntax, snippets)",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "publisher": "OptimaSystems",
     "author": {
         "email": "gil@optima-systems.co.uk",
@@ -32,28 +32,35 @@
         "apl",
         "dyalog"
     ],
+    "extensionDependencies": ["vscode.json"],
     "contributes": {
-        "languages": [{
-            "id": "apl",
-            "aliases": [
-					"APL",
-					"dyalog"
-				],
-			"extensions": [
-				".apl",
-				".apla",
-                ".aplc",
-				".aplf",
-				".apli",
-				".apln",
-                ".aplo",
-				".dyalog",
-				".dyapp",
-				".mipage"
-			],
-            "firstLine": "[⌶-⍺]|^\\#!.*(?:\\s|\\/|(?<=!)\\b)(?:gnu[-._]?apl|aplx?|dyalog)(?:$|\\s)|-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)apl(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-|(?:(?:\\s|^)vi(?:m[<=>]?\\d+|m)?|\\sex)(?=:(?=\\s*set?\\s[^\\n:]+:)|:(?!\\s* set?\\s))(?:(?:\\s|\\s*:\\s*)\\w*(?:\\s*=(?:[^\\n\\\\\\s]|\\\\.)*)?)*[\\s:](?:filetype|ft|syntax)\\s*=apl(?=\\s|:|$)",
-            "configuration": "./language-configuration.json"
-        }],
+        "languages": [
+            {
+                "id": "apl",
+                "aliases": [
+                    "APL",
+                    "dyalog"
+                ],
+                "extensions": [
+                    ".apl",
+                    ".apla",
+                    ".aplc",
+                    ".aplf",
+                    ".apli",
+                    ".apln",
+                    ".aplo",
+                    ".dyalog",
+                    ".dyapp",
+                    ".mipage"
+                ],
+                "firstLine": "[⌶-⍺]|^\\#!.*(?:\\s|\\/|(?<=!)\\b)(?:gnu[-._]?apl|aplx?|dyalog)(?:$|\\s)|-\\*-(?:\\s*(?=[^:;\\s]+\\s*-\\*-)|(?:.*?[;\\s]|(?<=-\\*-))mode\\s*:\\s*)apl(?=[\\s;]|(?<![-*])-\\*-).*?-\\*-|(?:(?:\\s|^)vi(?:m[<=>]?\\d+|m)?|\\sex)(?=:(?=\\s*set?\\s[^\\n:]+:)|:(?!\\s* set?\\s))(?:(?:\\s|\\s*:\\s*)\\w*(?:\\s*=(?:[^\\n\\\\\\s]|\\\\.)*)?)*[\\s:](?:filetype|ft|syntax)\\s*=apl(?=\\s|:|$)",
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "json",
+                "filenames": ["acre.config"]
+            }
+        ],
         "configurationDefaults": {
             "[apl]": {
                 "editor.wordBasedSuggestions": false,
@@ -70,6 +77,77 @@
         "snippets": [{
             "language": "apl",
             "path": "./snippets/apl.snippets.json"
-        }]
+        }],
+        "jsonValidation": [
+            {
+                "fileMatch": "acre.config",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "caseCode" : {
+                            "type": "string",
+                            "enum": ["on", "off"],
+                            "description": "Add case coded extension to file names."
+                        },
+                        "keepHistory" : {
+                            "type": "string",
+                            "enum": ["on", "off"],
+                            "description": "Save incremental changes to a local 'history' database."
+                        },
+                        "version": {
+                            "type": "string",
+                            "pattern": "^([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?(?:\\+[0-9A-Za-z-]+)?$",
+                            "description": "Version number following semantic versioning."
+                        },
+                        "startUp": {
+                            "type": "string",
+                            "description": "Latent expression to be executed once project has been opened."
+                        },
+                        "engine" : {
+                            "type": "string",
+                            "description": "Dyalog interpreter version supported"
+                        },
+                        "platform" : {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": ["W","L","M","A","S"],
+                                "description": "Array of platforms that are supported."
+                            }
+                        },
+                        "dependencies": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "group": {
+                                        "type": "string",
+                                        "description": "Name of group that the package belongs to (typically matching GitHub account)"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Name of the package (typically matching the GitHub repository)"
+                                    },
+                                    "version": {
+                                        "type": "string",
+                                        "pattern": "^([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?(?:\\+[0-9A-Za-z-]+)?$",
+                                        "description": "Version number following semantic versioning."
+                                    },
+                                    "alias": {
+                                        "type": "string",
+                                        "description": "Name of the package (typically matching the GitHub repository)"
+                                    },
+                                    "inject": {
+                                        "type": "string",
+                                        "enum": ["none", "root", "all"],
+                                        "description": "Name of the package (typically matching the GitHub repository)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
     }
 }
