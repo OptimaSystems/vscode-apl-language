@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## 0.0.7
+- fix configuration issue with acre.config schema
+
 ## 0.0.6
 - add schema validation for acre.config files
 

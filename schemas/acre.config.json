@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "Schema for acre.config file",
+    "type": "object",
+    "properties": {
+        "caseCode" : {
+            "type": "string",
+            "enum": ["on", "off"],
+            "description": "Add case coded extension to file names."
+        },
+        "keepHistory" : {
+            "type": "string",
+            "enum": ["on", "off"],
+            "description": "Save incremental changes to a local 'history' database."
+        },
+        "version": {
+            "type": "string",
+            "pattern": "^([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?(?:\\+[0-9A-Za-z-]+)?$",
+            "description": "Version number following semantic versioning."
+        },
+        "startUp": {
+            "type": "string",
+            "description": "Latent expression to be executed once project has been opened."
+        },
+        "engine" : {
+            "type": "string",
+            "description": "Dyalog interpreter version supported"
+        },
+        "platform" : {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["W","L","M","A","S"],
+                "description": "Array of platforms that are supported."
+            }
+        },
+        "dependencies": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "group": {
+                        "type": "string",
+                        "description": "Name of group that the package belongs to (typically matching GitHub account)"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the package (typically matching the GitHub repository)"
+                    },
+                    "version": {
+                        "type": "string",
+                        "pattern": "^([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*))?(?:\\+[0-9A-Za-z-]+)?$",
+                        "description": "Version number following semantic versioning."
+                    },
+                    "alias": {
+                        "type": "string",
+                        "description": "Name of the package (typically matching the GitHub repository)"
+                    },
+                    "inject": {
+                        "type": "string",
+                        "enum": ["none", "root", "all"],
+                        "description": "Name of the package (typically matching the GitHub repository)"
+                    }
+                }
+            }
+        }
+    }
+
+}
