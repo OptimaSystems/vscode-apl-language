@@ -73,7 +73,18 @@
             "language": "apl",
             "scopeName": "source.apl",
             "path": "./syntaxes/apl.tmLanguage.json"
-        }],
+        },
+        {
+            "scopeName": "markdown.code.apl",
+            "path": "./syntaxes/injection.json",
+            "injectTo": [
+                "text.html.markdown"
+              ],
+              "embeddedLanguages": {
+                "meta.embedded.block.apl": "apl"
+              }
+        }
+        ],
         "snippets": [{
             "language": "apl",
             "path": "./snippets/apl.snippets.json"
